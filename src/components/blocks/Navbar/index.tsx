@@ -5,8 +5,8 @@ import Container from "../../other/Container";
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 import Badge from "../../other/Badge";
-import likeSvg from '../../../assets/images/like.svg'
-import cartSvg from '../../../assets/images/cart.svg'
+import likeSvg from '../../../assets/images/icons/like.svg'
+import cartSvg from '../../../assets/images/icons/cart.svg'
 import Box from "../../other/Box";
 
 const StyledNavbar = styled.header`
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
               </Link>
             </Box>
             <Box>
-              <Link to="/liked">
+              <Link to="/cart">
                 <Badge content={3}>
                   <img src={cartSvg} alt="cart"/>
                 </Badge>

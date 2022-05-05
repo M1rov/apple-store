@@ -6,6 +6,7 @@ const Router: React.FC = () => {
   return (
     <Routes>
       <Route path='/' element={<MainScreen />} />
+      <Route path='/buy/:product' element={<MainScreen />} />
     </Routes>
   );
 };
