@@ -7,6 +7,11 @@ interface IFlex {
   align?: 'flex-start' | 'center' | 'flex-end',
   wrap?: 'wrap' | 'no-wrap',
   flex?: string,
+  margin?: string,
+  marginTop?: number,
+  marginBottom?: number,
+  marginRight?: number,
+  marginLeft?: number,
 }
 
 interface IFlexProps extends IFlex {
@@ -20,6 +25,11 @@ const StyledFlex = styled.div<IFlex>`
   align-items: ${({ align }) => align};
   flex-wrap: ${({ wrap }) => wrap};
   flex: ${({ flex }) => flex}
+  margin: ${({ margin }) => margin};
+  margin-top: ${({ marginTop }) => marginTop}px;
+  margin-bottom: ${({ marginBottom }) => marginBottom}px;
+  margin-left: ${({ marginLeft }) => marginLeft}px;
+  margin-right: ${({ marginRight }) => marginRight}px;
 `
 
 const Flex: React.FC<IFlexProps> = ({children, ...props}) => {

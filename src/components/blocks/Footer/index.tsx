@@ -36,63 +36,68 @@ const StyledFooter = styled.div`
 
 const Footer: React.FC = () => {
   return (
-    <Container>
-      <StyledFooter>
-        <Flex justify={"space-between"} align="flex-start">
-          <Link to='/'>
-            <Typography component="h2">
-              Apple Store
-            </Typography>
-          </Link>
-          <Box className='links'>
-            <Link to='/liked'>
-              <Typography component="h4" weight={400}>
-                Liked
-              </Typography>
-            </Link>
-            <Link to='/cart'>
-              <Typography component="h4" weight={400}>
-                Cart
-              </Typography>
-            </Link>
-            <Link to='/contacts'>
-              <Typography component="h4" weight={400}>
-                Contacts
-              </Typography>
-            </Link>
-          </Box>
-          <Box className='links'>
-            <Link to='/terms'>
-              <Typography component="h4" weight={400}>
-                Terms of service
-              </Typography>
-            </Link>
-          </Box>
-          <Box>
-            <a
-              className='icon'
-              href={'https://www.instagram.com'}
-              target='_blank'>
-              <img src={instagram} alt="instagram"/>
-            </a>
-            <a
-              className='icon'
-              href={'https://t.me/ur_sense'}
-              target='_blank'
-            >
-              <img src={telegram} alt="instagram"/>
-            </a>
-            <a
-              className='icon'
-              href={'https://github.com/M1rov'}
-              target='_blank'
-            >
-              <img src={github} alt="github"/>
-            </a>
-          </Box>
-        </Flex>
-      </StyledFooter>
-    </Container>
+      <div>
+        <Container>
+          <StyledFooter>
+            <Flex justify={"space-between"} align="flex-start">
+              <Link to='/'>
+                <Typography component="h2">
+                  Apple Store
+                </Typography>
+              </Link>
+              <Box className='links'>
+                <Link to='/liked'>
+                  <Typography component="h4" weight={400}>
+                    Liked
+                  </Typography>
+                </Link>
+                <Link to='/cart'>
+                  <Typography component="h4" weight={400}>
+                    Cart
+                  </Typography>
+                </Link>
+                <Link to='/contacts'>
+                  <Typography component="h4" weight={400}>
+                    Contacts
+                  </Typography>
+                </Link>
+              </Box>
+              <Box className='links'>
+                <Link to='/terms'>
+                  <Typography component="h4" weight={400}>
+                    Terms of service
+                  </Typography>
+                </Link>
+              </Box>
+              <Box>
+                <a
+                  className='icon'
+                  href={'https://www.instagram.com'}
+                  rel="noreferrer"
+                  target='_blank'>
+                  <img src={instagram} alt="instagram"/>
+                </a>
+                <a
+                  className='icon'
+                  href={'https://t.me/ur_sense'}
+                  rel="noreferrer"
+                  target='_blank'
+                >
+                  <img src={telegram} alt="instagram"/>
+                </a>
+                <a
+                  className='icon'
+                  href={'https://github.com/M1rov'}
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <img src={github} alt="github"/>
+                </a>
+              </Box>
+            </Flex>
+          </StyledFooter>
+        </Container>
+      </div>
   );
 };
 

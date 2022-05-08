@@ -8,7 +8,7 @@ const StyledContainer = styled.div`
 `
 
 interface ContainerProps {
-  children: JSX.Element|JSX.Element[]
+  children: React.ReactNode
 }
 
 const Container: React.FC<ContainerProps> = ({ children }) => {

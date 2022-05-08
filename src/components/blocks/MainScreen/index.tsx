@@ -47,9 +47,9 @@ const MainScreen: React.FC = () => {
           </Flex>
         </Box>
 
-        <Section title="Cases">
+        <Section title="Cases" id="cases">
           <Grid columns={3} gap={50} marginTop={20}>
-            <Link to='/'>
+            <Link to='/buy/cases/glass'>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -61,7 +61,7 @@ const MainScreen: React.FC = () => {
                 </Flex>
               </Card>
             </Link>
-            <Link to='/'>
+            <Link to='/buy/cases/silicon'>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -73,7 +73,7 @@ const MainScreen: React.FC = () => {
                 </Flex>
               </Card>
             </Link>
-            <Link to='/'>
+            <Link to='/buy/cases/leather'>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -88,9 +88,9 @@ const MainScreen: React.FC = () => {
           </Grid>
         </Section>
 
-        <Section title='Devices' marginTop={30}>
+        <Section title='Devices' marginTop={30} id="devices">
           <Grid columns={3} gap={50} marginTop={30}>
-            <Link to={'/buy/iphone'}>
+            <Link to={'/buy/devices/iphone'}>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -102,7 +102,7 @@ const MainScreen: React.FC = () => {
                 </Flex>
               </Card>
             </Link>
-            <Link to={'/buy/mac'}>
+            <Link to={'/buy/devices/mac'}>
               <Card>
                 <Flex align="center" justify={"flex-end"} direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -114,7 +114,7 @@ const MainScreen: React.FC = () => {
                 </Flex>
               </Card>
             </Link>
-            <Link to={'/buy/ipad'}>
+            <Link to={'/buy/devices/ipad'}>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -129,9 +129,9 @@ const MainScreen: React.FC = () => {
           </Grid>
         </Section>
 
-        <Section title='Accessories' marginTop={30}>
+        <Section title='Accessories' marginTop={30} id="accessories">
           <Grid columns={3} gap={50} marginTop={30}>
-            <Link to={'/buy/watch'}>
+            <Link to={'/buy/accessories/watch'}>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -143,7 +143,7 @@ const MainScreen: React.FC = () => {
                 </Flex>
               </Card>
             </Link>
-            <Link to={'/buy/airpods'}>
+            <Link to={'/buy/accessories/airpods'}>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>
@@ -155,7 +155,7 @@ const MainScreen: React.FC = () => {
                 </Flex>
               </Card>
             </Link>
-            <Link to={'/buy/airtag'}>
+            <Link to={'/buy/accessories/airtag'}>
               <Card>
                 <Flex align="center" direction="column">
                   <Box sx={{marginBottom: 20}}>

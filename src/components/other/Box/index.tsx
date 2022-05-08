@@ -1,11 +1,8 @@
 import React from 'react';
 
-interface IBox {
-  sx?: Object,
+interface IBoxProps {
+  sx?: React.CSSProperties,
   className?: string
-}
-
-interface IBoxProps extends IBox {
   children: JSX.Element | JSX.Element[] | string
 }
 

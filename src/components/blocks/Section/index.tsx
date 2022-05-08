@@ -12,7 +12,8 @@ interface ISection {
 
 interface ISectionProps extends ISection {
   title: string,
-  children: JSX.Element | JSX.Element[] | string,
+  children: React.ReactNode,
+  id?: string
 }
 
 const StyledSection = styled.section<ISection>`
@@ -23,11 +24,11 @@ const StyledSection = styled.section<ISection>`
   margin-right: ${({ marginRight }) => marginRight}px;
 `
 
-const Section: React.FC<ISectionProps> = ({title, children, ...props}) => {
+const Section: React.FC<ISectionProps> = ({title, children, id, ...props}) => {
   const theme = useTheme();
 
   return (
-    <StyledSection {...props}>
+    <StyledSection {...props} id={id}>
       <Typography component="h3" color={theme.colors.secondary}>
         {title}
       </Typography>

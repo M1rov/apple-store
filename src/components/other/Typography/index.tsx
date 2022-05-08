@@ -7,8 +7,10 @@ interface ITypography {
 }
 
 interface ITypographyProps extends ITypography {
-  children: JSX.Element | JSX.Element[] | string,
+  children: React.ReactNode,
   component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span',
+  className?: string,
+  sx?: React.CSSProperties,
 }
 
 const StyledTypography = styled.div<ITypography>`
@@ -16,9 +18,9 @@ const StyledTypography = styled.div<ITypography>`
   color: ${({ color }) => color};
 `
 
-const Typography: React.FC<ITypographyProps> = ({children, component, ...props}) => {
+const Typography: React.FC<ITypographyProps> = ({children, component, className, sx, ...props}) => {
   return (
-    <StyledTypography as={component || 'span'} {...props}>
+    <StyledTypography className={className} as={component || 'span'} {...props} style={sx}>
       {children}
     </StyledTypography>
   );

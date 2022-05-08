@@ -12,7 +12,7 @@ interface IGrid {
 }
 
 interface IGridProps extends IGrid {
-  children: JSX.Element | JSX.Element[],
+  children: React.ReactNode,
 }
 
 const StyledGrid = styled.div<IGrid>`
