@@ -3,7 +3,7 @@ import React from 'react';
 interface IBoxProps {
   sx?: React.CSSProperties,
   className?: string
-  children: JSX.Element | JSX.Element[] | string
+  children: React.ReactNode
 }
 
 const Box: React.FC<IBoxProps> = ({children, className, sx}) => {

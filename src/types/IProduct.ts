@@ -5,5 +5,6 @@ export default interface IProduct {
   price: number,
   oldPrice: number,
   rating: number,
-  description: string
+  description: string,
+  isFavourite: boolean
 }

@@ -4,6 +4,8 @@ import App from './components/blocks/App';
 import {createGlobalStyle, DefaultTheme, ThemeProvider} from 'styled-components';
 import {BrowserRouter} from "react-router-dom";
 import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import {Provider} from "react-redux";
+import {store} from "./store/store";
 
 const theme: DefaultTheme = {
   colors: {
@@ -19,20 +21,27 @@ const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     font-family: 'Montserrat', serif;
   }
-  
+
   * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     background: ${theme.colors.gray};
   }
-  
+
   a {
     color: inherit;
     text-decoration: none;
+  }
+
+  button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
   }
 `;
 
@@ -49,9 +58,11 @@ root.render(
   <ThemeProvider theme={theme}>
     <BrowserRouter>
       <ApolloProvider client={client}>
-        <App />
+        <Provider store={store}>
+          <App/>
+        </Provider>
       </ApolloProvider>
     </BrowserRouter>
-    <GlobalStyle />
+    <GlobalStyle/>
   </ThemeProvider>
 );

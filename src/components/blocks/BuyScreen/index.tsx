@@ -6,10 +6,14 @@ import {useParams} from "react-router-dom";
 import {useQuery} from "@apollo/client";
 import {GET_PRODUCTS_BY_TYPE} from "../../../query/product";
 import IProduct from "../../../types/IProduct";
-import ProductCard from "./Product";
+import ProductCard from "./ProductCard";
 import Grid from "../../other/Grid";
 import {HashLink as Link} from "react-router-hash-link";
 import Loader from "../Loader";
+import Box from "../../other/Box";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store/store";
+
 
 const StyledBuyScreen = styled.div`
   padding-top: 30px;
@@ -41,11 +45,20 @@ const BuyScreen: React.FC = () => {
     }
   })
 
+  const favouriteProducts = useSelector((state: RootState) => state.product.favourite);
+
   useEffect(() => {
     if (data) {
-      setProducts(data.getProductsByType);
+      const items = data.getProductsByType.map((item: IProduct) => {
+        return {
+          ...item,
+          isFavourite: Array.isArray(favouriteProducts) ? favouriteProducts.some(id => item.id === id) : false
+        }
+      })
+
+      setProducts(items);
     }
-  }, [data])
+  }, [data, favouriteProducts])
 
 
   return (
@@ -61,9 +74,25 @@ const BuyScreen: React.FC = () => {
         {loading ?
           <Loader/>
           :
-          <Grid columns={3} gap={50} marginTop={50}>
-            {products?.map(product => <ProductCard key={product.id} item={product}/>)}
-          </Grid>
+          error ?
+            <Box sx={{marginTop: 50, textAlign: "center"}}>
+              <Typography component="h3">
+                Oops...<br/>
+                Something went wrong! Please, try later!
+              </Typography>
+            </Box>
+            :
+            products?.length ?
+              <Grid columns={3} gap={50} marginTop={50}>
+                {products.map(product => <ProductCard key={product.id} item={product}/>)}
+              </Grid>
+              :
+              <Box sx={{marginTop: 50, textAlign: "center"}}>
+                <Typography component="h2" weight={400}>
+                  We have no such products yet! Please, come later!
+                </Typography>
+              </Box>
+
         }
       </Container>
     </StyledBuyScreen>
